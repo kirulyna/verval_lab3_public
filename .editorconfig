@@ -1,0 +1,19 @@
+root = true
+
+[*]
+indent_style = space
+indent_size = 4
+end_of_line = lf
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+[*.cs]
+dotnet_analyzer_diagnostic.category-Naming.severity = error
+
+dotnet_naming_rule.classes_should_be_pascal_case.severity = error
+dotnet_naming_rule.classes_should_be_pascal_case.symbols = all_classes
+dotnet_naming_rule.classes_should_be_pascal_case.style = pascal_case_style
+
+dotnet_naming_symbols.all_classes.applicable_kinds = class
+dotnet_naming_style.pascal_case_style.capitalization = pascal_case
