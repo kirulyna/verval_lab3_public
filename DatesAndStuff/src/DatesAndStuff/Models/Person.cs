@@ -7,7 +7,7 @@ using System.Runtime.Serialization;
 
 namespace DatesAndStuff.Models;
 
-public class Person
+public class person
 {
     private bool married = false;
 
