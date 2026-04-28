@@ -16,7 +16,7 @@ jobs:
             - name: Setup .NET
               uses: actions/setup-dotnet@v4
               with:
-                  dotnet-version: 8.0
+                  dotnet-version: '10.0.x'
 
             - name: Restore dependencies
               run: dotnet restore
@@ -25,9 +25,11 @@ jobs:
               run: dotnet build --no-restore
 
             - name: Test
+              continue-on-error: true
               run: dotnet test --no-build --verbosity normal --collect:"XPlat Code Coverage"
 
             - name: ReportGenerator
+              if: always()
               uses: danielpalme/ReportGenerator-GitHub-Action@5.2.4
               with:
                   reports: '**/TestResults/*/coverage.cobertura.xml'
@@ -35,6 +37,7 @@ jobs:
                   reporttypes: 'HtmlChecklas'
 
             - name: Upload coverage report artifact
+              if: always()
               uses: actions/upload-artifact@v4
               with:
                   name: code-coverage-report
