@@ -26,15 +26,18 @@ jobs:
 
             - name: Test
               continue-on-error: true
-              run: dotnet test --collect:"XPlat Code Coverage" --results-directory ./TestResults
+              run: dotnet test --no-build --collect:"XPlat Code Coverage" --results-directory ./coverage
+
+            -   name: List files
+                    run: ls -R ./coverage
 
             - name: ReportGenerator
               if: always()
               uses: danielpalme/ReportGenerator-GitHub-Action@5.2.4
               with:
-                  reports: '**/coverage.cobertura.xml'
+                  reports: 'coverage/**/*.xml'
                   targetdir: 'coveragereport'
-                  reporttypes: 'HtmlChecklas'
+                  reporttypes: 'Html;HtmlSummary'
 
             - name: Upload coverage report artifact
               if: always()
