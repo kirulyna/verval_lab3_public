@@ -58,7 +58,7 @@ jobs:
                     node-version: '20'
 
             -   name: Install dependencies
-                working-directory: ./JSProject
+                working-directory: ./JSProjekt
                 run: npm install
 
             -   name: Run Linter
