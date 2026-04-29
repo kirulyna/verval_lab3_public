@@ -63,7 +63,7 @@ jobs:
 
             -   name: Run Linter
                 working-directory: ./JSProjekt
-                run: npx eslint . || echo "Linter found issues, but continuing..."
+                run: npx eslint .
 
             -   name: Run Tests
                 working-directory: ./JSProjekt
