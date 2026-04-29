@@ -62,9 +62,9 @@ jobs:
                 run: npm install
 
             -   name: Run Linter
-                working-directory: ./JSProject
+                working-directory: ./JSProjekt
                 run: npx eslint . || echo "Linter found issues, but continuing..."
 
             -   name: Run Tests
-                working-directory: ./JSProject
+                working-directory: ./JSProjekt
                 run: npm test
