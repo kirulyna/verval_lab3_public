@@ -24,5 +24,5 @@ A következő feladathoz fog kelleni egy JS/TS projekt. Lehet használni más ta
 7. Bónusz (2 pont) A JS kódok formázását kikényszerítheti husky git hookok használatával, ahogy azt pl. itt is látja: https://github.com/actions/setup-dotnet/tree/main/.husky  Doksi:https://typicode.github.io/husky/ . Írjon egy szándékosan hanyagabb kódot, és mutassa be, hogy push után a hook automatikusan kijavította azt. (a példa js projekt minimálisan az :)).
 
 8. (3 pont) Ezt a kódkupacot kösse be SonarCube alá. Ideális esetben a community buildet használja innen (https://www.sonarsource.com/products/sonarqube/downloads/). Ha a StartSonar paranccsal nem indulna valamiért el a Sonar, ne küzdjünk a megjavítással, használjuk a Sonar Cloud ingyenes megoldását az analízisre (egy screenshot a SonarCube indulási hibájáról kell ebben az esetben ide a readme-be). - A readme-ben mutassa meg az össesítő oldalát a kódoknak, amiket bekötött a Sonar alá.
-
+![img_3.png](img_3.png)
 9. (3 pont) Elemezze a Sonar által talált hibákat. Válassza ki a legfontosabbnak ítélt problémát, javítsa ki, majd az újabb analízissel igazolja a javulást a dokumentációban. Egy screenshot-t ide a readme-be a hibáról a Sonar oldalán.
