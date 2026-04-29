@@ -54,6 +54,13 @@ namespace DatesAndStuff.Tests
                 // Assert
                 Assert.AreNotEqual(now.TotalMilliseconds, sut.TotalMilliseconds, "Should not be equal");
             }
+
+            [Test]
+            public void Constructor_WithAllParameters_ShouldWork()
+            {
+                var sut = new SimulationTime(2026, 5, 1, 10, 30, 0);
+                Assert.AreEqual("2026-05-01T10:30:00", sut.ToString());
+            }
         }
 
         [Test]
@@ -75,7 +82,7 @@ namespace DatesAndStuff.Tests
             var sut2 = new SimulationTime(2026, 2, 26);
             // Act
             // Assert
-            Assert.AreNotEqual(sut1, sut2, "Should be equal");
+            Assert.IsFalse(sut1 != sut2);
         }
 
         [Test]
@@ -182,21 +189,29 @@ namespace DatesAndStuff.Tests
         // Next millisec calculation works
         public void GivenSimulationTime_WhenCalculatingNextMillisec_ThenReturnsCorrectValue()
         {
-            throw new NotImplementedException();
+            var sut = new SimulationTime(2026, 2, 26, 12, 0, 0);
+            var next = sut.NextMillisec;
+            Assert.AreEqual(sut.TotalMilliseconds + 1, next.TotalMilliseconds);
         }
 
         [Test]
         // Create a SimulationTime from a DateTime, add the same milliseconds to both and check if they are still equal
         public void GivenDateTimeAndSimulationTime_WhenAddingMilliseconds_ThenTimesShouldBeEqual()
         {
-            throw new NotImplementedException();
+            var date = new DateTime(2026, 2, 26, 12, 0, 0);
+            var sut = new SimulationTime(date);
+            var result = sut.AddMilliseconds(500);
+            Assert.AreEqual(date.AddMilliseconds(500), result.ToAbsoluteDateTime());
         }
 
         [Test]
         // The same as before just with seconds
         public void GiveDateTimeAndSimulationTime_WhenAddingSeconds_ThenTimesShouldBeEqual()
         {
-            throw new NotImplementedException();
+            var date = new DateTime(2026, 2, 26, 12, 0, 0);
+            var sut = new SimulationTime(date);
+            var result = sut.AddSeconds(10);
+            Assert.AreEqual(date.AddSeconds(10), result.ToAbsoluteDateTime());
         }
 
         [Test]

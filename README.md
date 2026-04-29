@@ -14,7 +14,7 @@ Ebben a feladatban a standard kódminőségi munkafolyamatok pár eszközét pr�
 4. (4 pont) Egészítse ki a workflow-t automatizált tesztfuttatással és **code coverage** (lefedettség) generálással. A folyamat készítsen HTML riportot, és ezt mentse el **artifact**-ként a futás végén.
 
 5. (2 pont) Nézze végig a coverage riportot és keressen olyan kódot, amit nem fed le teszt. Erről készítsen egy screenshot-t és illesze ide a readme-be. Írjon tesztet, ami lefedi a kérdéses kódot. Commitolja az új teszet, majd az új reportból bizonyítsa, hogy ez sikeres volt (az összesítő oldalon javulnak a lefedettségi számok, az előzőleg megcélzott kód már lefedésre került).
-
+![img_1.png](img_1.png)
 A következő feladathoz fog kelleni egy JS/TS projekt. Lehet használni más tantárgynál lévő projektet pl. webből, viszont ha valaki ezzel nem szeretne élni, itt egy egyszerű JavaScript projekt (https://github.com/ubb-verval-2026/ubb-verval-simple-js-project), amit `npx serve` paranccsal lehet futtatni. A választott projektet húzza be ebbe a labor repo-jába.
 
 6. (2 pont) Konfiguráljon a technológiának megfelelő kódformázási standardokat a kérdéses kódokra. (pl. eslint, prettier ..stb)
