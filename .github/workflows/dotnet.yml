@@ -16,7 +16,7 @@ jobs:
             - name: Setup .NET
               uses: actions/setup-dotnet@v4
               with:
-                  dotnet-version: '10.0.x'
+                  dotnet-version: '8.0.x'
 
             - name: Restore dependencies
               run: dotnet restore
@@ -32,9 +32,9 @@ jobs:
               if: always()
               uses: danielpalme/ReportGenerator-GitHub-Action@5.2.4
               with:
-                    reports: 'TestResults/**/coverage.cobertura.xml'
-                    targetdir: 'coveragereport'
-                    reporttypes: 'HtmlInline_AzurePipelines;HtmlChecklas'
+                  reports: '**/coverage.cobertura.xml'
+                  targetdir: 'coveragereport'
+                  reporttypes: 'HtmlChecklas'
 
             - name: Upload coverage report artifact
               if: always()
